@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>316 SBA</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script defer src="./scripts/script.mjs"></script>
+</head>
+
+    <body>
+
+        <header>
+            <ul>
+                <li class="link1"><a href="#"><i>Said<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Masih<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sajady</i></a></li>
+                <li class="link2"><a href="#">My Quiz!<br><hr>How much you know me?</a></li>
+                <li class="link1" id="username"><a href="#"><i>The Quiz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Player Is:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>???&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></a></li>
+            </ul>
+
+            <div id="usernameInput">
+                <h2>Before we start, <br>type your name below <br>then press enter!</h2>
+                <input id="yourName" type="text" placeholder="Your Name" ><br></input>
+            </div>
+            
+        </header>
+
+        <section class="container">
+
+            <b id="questionNumber">Question Number</b>
+            <b id="totalScore">Score: 0</b>
+            
+            <div id="question">
+                <h2>Placeholder! For Question</h2>
+            </div>
+
+            <fieldset id="questionOptions">
+                <legend id="questionBasics">Select from the following options:</legend>
+            
+                <div>
+                <input type="radio" id="option1" name="drone" value="option1" checked />
+                <label for="option1"></label>
+                </div>
+            
+                <div>
+                <input type="radio" id="option2" name="drone" value="option2" />
+                <label for="option2"></label>
+                </div>
+            
+                <div>
+                <input type="radio" id="option3" name="drone" value="option3" />
+                <label for="option3"></label>
+                </div>
+
+                <div>
+                    <input type="radio" id="option4" name="drone" value="option4" />
+                    <label for="option4"></label>
+                </div>
+            </fieldset>
+
+            <div>
+                <button id="submitBtn" type="button">Submit</button>
+            </div>
+            
+            <div id="result"></div>
+        </section>
+
+    </body>
+
+</html>
