@@ -3,43 +3,39 @@ header {
     text-align: center;
     background: #7c9a83;
     color: white;
-  }
+}
   
-  header > ul {
+header > ul {
     display: flex;
     list-style-type: none;
     justify-content: center;
-  }
+}
   
-  li a {
+li a {
     text-decoration: none;
     color: white;
-  }
+}
   
-  .link1 {
+.link1 {
     font-size: 30px;
     padding: 5px 10px;
     display: inline-block;
     text-align: center;
-  }
+}
   
-  .link2 {
+.link2 {
     margin: auto;
     font-size: 30px;
-  }
+}
   
-  section {
-    width: auto;
+section {
     text-align: center;
-    padding: 125px 75px;
-    margin: auto;
-    margin-top: 35px;
-    width: 25%;
-    height: 100%;
-    margin-left: 33%;
+    width: 40%; 
+    margin: 0 auto; 
+    height: 10px;
     background-color: rgba(172, 171, 171, 0.884);
     color: white;
-  }
+}
   
   p, label {
   font: 1rem 'Fira Sans', sans-serif;
@@ -57,13 +53,13 @@ header {
     text-align: center;
   }
   
-  .score-container {
+.score-container {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
-  }
+}
   
-  #questionNumber {
+#questionNumber {
     background-color: #7c9a83;
     color: white;
     padding: 10px;
@@ -72,9 +68,9 @@ header {
     margin-top: 10px;
     border-radius: 5px;
     border-color: #7c9a83;
-  }
+}
   
-  #totalScore {
+#totalScore {
     background-color: #7c9a83;
     color: white;
     padding: 10px;
@@ -83,40 +79,39 @@ header {
     margin-top: 10px;
     border-radius: 5px;
     border-color: #7c9a83;
-  }
+}
   
-  .container {
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+}
   
-  #submitBtn {
+#submitBtn {
     margin-top: 20px;
     border-radius: 5px;
     background-color: #7c9a83;
     color: white;
     width: 100px;
     height: 40px;
-  }
+}
   
-  section.container {
+section.container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh; 
-  }
+}
   
-  #usernameInput {
+#usernameInput {
     color: #7c9a83;
     background-color: rgb(219, 225, 221);
     width: 25%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     padding: 20px;
     border-radius: 10px;
-  }
+    margin-left: 513px;
+}
 
 .custom-message-container {
     display: flex;
