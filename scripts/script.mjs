@@ -5,11 +5,22 @@ document.addEventListener("DOMContentLoaded", function() {
             let name = nameInput.value.trim();
             if (name !== "") {
                 let usernameElement = document.getElementById("username");
-                
+
                 if (usernameElement) {
                     usernameElement.querySelector("a").innerHTML = `<i>The Quiz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Player Is:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><b>${name.split(" ").join("<br>")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>`;
                 }
-                
+
+                // Create and append a custom message
+                let customMessageContainer = document.createElement("div");
+                customMessageContainer.classList.add("custom-message-container");
+
+                let customMessage = document.createElement("p");
+                customMessage.innerText = "Good luck with the quiz!";
+                customMessage.style.color = "green";
+
+                customMessageContainer.appendChild(customMessage);
+                document.body.insertBefore(customMessageContainer, document.querySelector("section"));
+
                 document.getElementById("usernameInput").style.display = "none";
                 startQuiz();
             }
@@ -20,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let questionIndex = 0;
         let score = 0;
 
-        const questions = [ questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven, questionEight, questionNine, questionTen ];
+        const questions = [questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven, questionEight, questionNine, questionTen];
 
         function loadQuestion() {
             if (questionIndex >= questions.length) {
@@ -42,19 +53,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function showResult() {
             const section = document.querySelector("section.container");
-            section.innerHTML = `<h2>Your final score is: ${score} out of ${questions.length}</h2>`;
+            const fragment = document.createDocumentFragment();
+            const resultMessage = document.createElement("h2");
+            resultMessage.innerText = `Your final score is: ${score} out of ${questions.length}`;
+            fragment.appendChild(resultMessage);
+            section.innerHTML = "";
+            section.appendChild(fragment);
         }
 
         document.getElementById("submitBtn").addEventListener("click", function() {
-            const selectedOption = document.querySelector('input[name="drone"]:checked');
+            const selectedOption = document.querySelector('input:checked');
             if (selectedOption) {
                 const selectedValue = selectedOption.nextElementSibling.innerText;
+
+                const customMessage = document.querySelector(".custom-message-container p");
 
                 if (selectedValue === eval(`option${questions[questionIndex].correctOption}`)) {
                     score++;
                     alert(correctResponse);
+                    customMessage.style.color = "green"; // Set to green for correct answer
                 } else {
                     alert(incorrectResponse);
+                    customMessage.style.color = "red"; // Set to red for incorrect answer
                 }
 
                 questionIndex++;

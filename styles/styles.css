@@ -36,7 +36,7 @@ header {
     margin-top: 35px;
     width: 25%;
     height: 100%;
-  
+    margin-left: 33%;
     background-color: rgba(172, 171, 171, 0.884);
     color: white;
   }
@@ -104,10 +104,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height to center vertically */
+    height: 100vh; 
   }
   
-  /* Centering the #usernameInput box */
   #usernameInput {
     color: #7c9a83;
     background-color: rgb(219, 225, 221);
@@ -118,3 +117,15 @@ header {
     padding: 20px;
     border-radius: 10px;
   }
+
+.custom-message-container {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0; 
+    margin-left: 30px;
+}
+
+.custom-message-container p {
+    font-size: 2em;
+    color:#7c9a83;
+}
