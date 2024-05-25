@@ -61,6 +61,16 @@ document.addEventListener("DOMContentLoaded", function() {
             section.appendChild(fragment);
         }
 
+        // Iterating over radio buttons
+        document.querySelectorAll('input[name="drone"]').forEach(input => {
+            input.addEventListener('change', function() {
+                const selectedOption = document.querySelector('input:checked');
+                if (selectedOption) {
+                    selectedOption.checked = true;
+                }
+            });
+        });
+
         document.getElementById("submitBtn").addEventListener("click", function() {
             const selectedOption = document.querySelector('input:checked');
             if (selectedOption) {
