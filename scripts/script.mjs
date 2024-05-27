@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     let nameInput = document.getElementById("yourName");
+
+    // Waits for the enter to be pressed for the name input
     nameInput.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
             let name = nameInput.value.trim();
             if (name !== "") {
                 let usernameElement = document.getElementById("username");
 
+                // Changes the ??? to the user's name on the header
                 if (usernameElement) {
                     usernameElement.querySelector("a").innerHTML = `<i>The Quiz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Player Is:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><b>${name.split(" ").join("<br>")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>`;
                 }
@@ -21,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 customMessageContainer.appendChild(customMessage);
                 document.body.insertBefore(customMessageContainer, document.querySelector("section"));
 
+                // Then hides the username input after the intial input and starts the quiz
                 document.getElementById("usernameInput").style.display = "none";
                 startQuiz();
             }
@@ -71,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
 
+        // Radio buttons event lisenter
         document.getElementById("submitBtn").addEventListener("click", function() {
             const selectedOption = document.querySelector('input:checked');
             if (selectedOption) {
@@ -78,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 const customMessage = document.querySelector(".custom-message-container p");
 
+                // If the correct answer was selected
                 if (selectedValue === eval(`option${questions[questionIndex].correctOption}`)) {
                     score++;
                     alert(correctResponse);
