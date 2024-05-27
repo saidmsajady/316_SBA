@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // Iterating over radio buttons
-        document.querySelectorAll('input[name="drone"]').forEach(input => {
+        document.querySelectorAll('input').forEach(input => {
             input.addEventListener('change', function() {
                 const selectedOption = document.querySelector('input:checked');
                 if (selectedOption) {
@@ -193,7 +193,7 @@ function questionSeven() {
     option4 = "Yellow Watermelon";
 
     correctResponse = "Correct! Yeah I had to search up rare fruits and yellow watermelon popped up";
-    incorrectResponse = "Wrong. I mean I thought it was obvious how much I am in a better mood when I have my watermelon";
+    incorrectResponse = "Wrong. I mean I thought it was obvious how much I am in a better mood when I have my watermelon. Also I didnt even know that yellow watermelon existed until I searched up exotic fruits";
     questionSeven.correctOption = 3;
 }
 
